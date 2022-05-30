@@ -1,0 +1,52 @@
+<p style="color: green"><%= notice %></p>
+
+<div class="card" style="width: 18rem;">
+  <img src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">Card title</h5>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="btn btn-primary">Go somewhere</a>
+  </div>
+</div>
+
+<table class="table table-bordered table-hover">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Name</th>
+      <th scope="col">email</th>
+      <th scope="col">phone</th>
+      <th scope="col">Handle</th>
+
+    </tr>
+  </thead>
+
+    <tbody>
+      <% @friends.each do |friend| %>
+        <%#% if friend.user == current_user %>
+        <tr>
+          <td>
+<%= link_to friend.first_name + ' ' + friend.last_name, friend %>
+
+
+          </td>
+          
+          <td><%= friend.email %></td>
+          <td><%= friend.phone %></td>
+          <td><%= friend.twitter %></td>
+          
+          
+          
+          
+          
+          <td><%= link_to 'Delete', friend, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-outline-danger btn-sm" %></td>
+          
+        </tr>
+        <% end %>
+      <%# end %>
+    </tbody>
+  </table>
+
+  <br>
+
+
+  <%= link_to 'New Friend', new_friend_path, class:"btn btn-secondary" %>
