@@ -1,13 +1,6 @@
-<p style="color: green"><%= notice %></p>
 
-<div class="card" style="width: 18rem;">
-  <img src="..." class="card-img-top" alt="...">
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
-</div>
+
+
 
 <table class="table table-bordered table-hover">
   <thead class="thead-dark">
@@ -22,12 +15,10 @@
 
     <tbody>
       <% @friends.each do |friend| %>
-        <%#% if friend.user == current_user %>
+        <%# if friend.user == current_user %>
         <tr>
           <td>
-<%= link_to friend.first_name + ' ' + friend.last_name, friend %>
-
-
+            <%= link_to friend.first_name + ' ' + friend.last_name, friend %>
           </td>
           
           <td><%= friend.email %></td>
